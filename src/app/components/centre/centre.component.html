@@ -1,0 +1,21 @@
+<div class="centre">
+    <h2 class="title">Find Centres</h2>
+    <div class="clr-row">
+        <clr-select-container class="clr-col-3">
+            <label>City</label>
+            <select clrSelect name="city" [(ngModel)]="city" required (change)="updateCity()">
+                <option *ngFor="let c of cities" value="{{c.value}}">{{c.label}}</option>
+            </select>
+        </clr-select-container>
+        <clr-select-container class="clr-col-3">
+            <label>Centre's</label>
+            <select clrSelect name="centre" [(ngModel)]="centre" required [disabled]="!selectedCity">
+                <option *ngFor="let location of selectedCity?.locations" value="{{location}}">{{location}}</option>
+            </select>
+        </clr-select-container>
+    </div>
+    <div class="map text-center">
+        <button class="btn btn-primary" *ngIf="city && centre" (click)="openMap()">Google map for the selected
+            centre</button>
+    </div>
+</div>

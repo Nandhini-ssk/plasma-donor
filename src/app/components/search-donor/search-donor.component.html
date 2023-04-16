@@ -1,0 +1,94 @@
+<div class="search-donor">
+    <h2 class="title">Search Donor</h2>
+
+    <form clrForm style="padding: 0; margin: 10px 0 20px;">
+        <clr-input-container style="margin: 0;" class="text-center">
+            <label class="display-none"></label>
+            <input clrInput placeholder="Search Donor, Plasma Bank and Hospitals" name="search"
+                class="search-box clr-col-12 p-0" style="width: 60%;" [(ngModel)]="searchTerm" (input)="filterData()" />
+        </clr-input-container>
+    </form>
+
+    <clr-accordion *ngIf="searchTerm" [clrAccordionMultiPanel]="true">
+        <clr-accordion-panel>
+            <clr-accordion-title>Donor</clr-accordion-title>
+            <clr-accordion-content *clrIfExpanded>
+                <table class="table table-compact">
+                    <thead>
+                        <tr>
+                            <th class="left">Name</th>
+                            <th class="left">Age</th>
+                            <th class="left">Centre</th>
+                            <th class="left">Mobile</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let d of filteredDonor">
+                            <td class="left">{{d.name}}</td>
+                            <td class="left">{{d.age}}</td>
+                            <td class="left">{{d.centre}}</td>
+                            <td class="left">{{d.mobile}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="filteredDonor?.length === 0" class="no-search-results">
+                    No results for search criteria
+                </div>
+            </clr-accordion-content>
+        </clr-accordion-panel>
+
+        <clr-accordion-panel>
+            <clr-accordion-title>Plasma Bank</clr-accordion-title>
+            <clr-accordion-content *clrIfExpanded>
+                <table class="table table-compact">
+                    <thead>
+                        <tr>
+                            <th class="left">Name</th>
+                            <th class="left">Centre</th>
+                            <th class="left">Mobile</th>
+                            <th class="left">Donors Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of filteredPlasmaBank">
+                            <td class="left">{{p.name}}</td>
+                            <td class="left">{{p.centre}}</td>
+                            <td class="left">{{p.mobile}}</td>
+                            <td class="left">{{p.donorsCount}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="filteredPlasmaBank?.length === 0" class="no-search-results">
+                    No results for search criteria
+                </div>
+            </clr-accordion-content>
+        </clr-accordion-panel>
+
+        <clr-accordion-panel>
+            <clr-accordion-title>Hospitals</clr-accordion-title>
+            <clr-accordion-content *clrIfExpanded>
+                <table class="table table-compact">
+                    <thead>
+                        <tr>
+                            <th class="left">Name</th>
+                            <th class="left">Centre</th>
+                            <th class="left">Mobile</th>
+                            <th class="left">Donors Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let h of filteredHospitals">
+                            <td class="left">{{h.name}}</td>
+                            <td class="left">{{h.centre}}</td>
+                            <td class="left">{{h.mobile}}</td>
+                            <td class="left">{{h.donorsCount}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="filteredHospitals?.length === 0" class="no-search-results">
+                    No results for search criteria
+                </div>
+            </clr-accordion-content>
+        </clr-accordion-panel>
+    </clr-accordion>
+</div>

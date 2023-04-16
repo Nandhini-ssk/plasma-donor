@@ -1,0 +1,28 @@
+<header class="header-6">
+  <div class="branding">
+    ...
+  </div>
+  <div class="header-nav">
+    <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      routerLink="/">Home</a>
+    <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      routerLink="/donate">Donate</a>
+    <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      routerLink="/centre">Centre</a>
+    <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      routerLink="/search-donor">Search for Donor</a>
+    <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      routerLink="/about">About Us</a>
+    <a class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      routerLink="/awareness">Awareness</a>
+  </div>
+  <div class="header-actions">
+    <a class="nav-link nav-icon" aria-label="settings">
+      <cds-icon shape="settings"></cds-icon>
+    </a>
+  </div>
+</header>
+
+<div class="page-content">
+  <router-outlet></router-outlet>
+</div>
