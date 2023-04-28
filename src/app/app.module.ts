@@ -14,6 +14,7 @@ import { CentreComponent } from './components/centre/centre.component';
 import { SearchDonorComponent } from './components/search-donor/search-donor.component';
 import { AboutComponent } from './components/about/about.component';
 import { AwarenessComponent } from './components/awareness/awareness.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AwarenessComponent } from './components/awareness/awareness.component';
     CentreComponent,
     SearchDonorComponent,
     AboutComponent,
-    AwarenessComponent
+    AwarenessComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@ import { CentreComponent } from './components/centre/centre.component';
 import { SearchDonorComponent } from './components/search-donor/search-donor.component';
 import { AboutComponent } from './components/about/about.component';
 import { AwarenessComponent } from './components/awareness/awareness.component';
+import { LoginComponent } from './components/login/login.component';
+
 
 const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,6 +19,7 @@ const routes: Routes = [
   { path: 'search-donor', component: SearchDonorComponent },
   { path: 'about', component: AboutComponent },
   { path: 'awareness', component: AwarenessComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
